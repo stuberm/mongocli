@@ -1,5 +1,5 @@
 {
-  "name": "stuberm/mongocli",
+  "name": "@stuberm/mongocli",
   "version": "0.1.0",
   "description": "MongoDB CLI with named connections",
   "license": "MIT",
