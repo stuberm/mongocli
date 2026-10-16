@@ -3,6 +3,8 @@
 A MongoDB CLI using the same stack and command parser as sqlcli: Bun, TypeScript,
 ES modules, and the official database driver. No separate mongosh installation required.
 
+Inspired by Armin Emmert's [sqlcli](https://github.com/emmertarmin/sqlcli)
+
 ## Development and installation
 
 ```sh
@@ -26,13 +28,6 @@ mongocli connection add local --uri mongodb://localhost:27017 --database mydb
 # With flags, --user prompts for a hidden password:
 mongocli connection add production --uri mongodb+srv://cluster.example.net \
   --database mydb --user reader --auth-source admin
-
-# Alternatively, supply a password through stdin:
-read -rs -p 'MongoDB password: ' password; echo
-printf '%s' "$password" | mongocli connection add production \
-  --uri mongodb+srv://cluster.example.net --database mydb \
-  --user reader --auth-source admin --password-stdin
-unset password
 
 mongocli connection list
 mongocli connection list --verbose
